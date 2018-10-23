@@ -8,7 +8,7 @@ $senha = $_POST['senha'];
 
 $objDb = new db();
 $link = $objDb->conecta_mysql();
-$sql = "INSERT INTO usuarios (usuario, email, senha) values ('$usuario','$email','$email')";
+$sql = "INSERT INTO usuarios (usuario, email, senha) values ('$usuario','$email','$senha')";
  
 //executar a query
 if(mysqli_query($link,$sql)){
