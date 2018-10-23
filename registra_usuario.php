@@ -1,3 +1,20 @@
-$_POST['usuario'];
-$_POST['email'];
-$_POST['senha'];
+<?php
+
+require_once('db.class.php');
+
+$usuario = $_POST['usuario'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+
+$objDb = new db();
+$link = $objDb->conecta_mysql();
+$sql = "INSERT INTO usuarios (usuario, email, senha) values ('$usuario','$email','$email')";
+ 
+//executar a query
+if(mysqli_query($link,$sql)){
+    echo 'Usuário registrado com sucesso!';
+}else{
+    echo 'Erro ao registrar o usuários';
+}
+
+?>
